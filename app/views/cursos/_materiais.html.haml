@@ -1,0 +1,21 @@
+- tipo_video ||= "vimeo"
+%table{:style=>"width:100%"}
+  %thead
+    %th NOME
+    %th DATA
+    %th AÇÕES
+  - materiais.each do |material|
+    %tr
+      %td
+        %i{:class => "foundicon-#{material.video.blank? ? 'paper-clip':'video'}"}
+        = material.nome
+      %td= material.created_at.strftime("%d/%m/%Y")
+      %td
+        - unless material.url.blank?
+          %a{:href => material.url, :class => "button small"}
+            %i{:class => "foundicon-folder"} &nbsp; Download
+        %a{:href => '#', :class => "button small success", :"data-reveal-id"=>"modal_#{prefix}_#{material.id}"}
+          %i{:class => "foundicon-#{material.video.blank? ? "search" : "video"}"}
+          &nbsp; 
+          = material.video.blank? ? "Detalhes" : "Assistir"
+= render partial: "detalhe_material", collection: materiais, locals: {prefix: prefix, tipo_video: tipo_video}

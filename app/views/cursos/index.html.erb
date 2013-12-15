@@ -1,0 +1,25 @@
+<h2 class="text-right"><i>Meus Cursos</i></h2>
+
+<ul class="small-block-grid-2 large-block-grid-4">
+
+<% @matriculas.each do |matricula| %>
+  <% curso = matricula.curso %>
+  <li>
+    <h3><a href="#"><%= curso.nome %></a></h3>
+    <%= image_tag curso.imagem_url(:thumb) if curso.imagem? %>
+    <p>
+      <% if curso.matriculado?(current_user) %>
+        <%= link_to(url_for(curso), :class => "button round small success") do %>
+          <i class="foundicon-address-book"></i>&nbsp;Entrar
+        <% end %>
+      <% else %>
+        <div data-alert="" class="alert-box">
+          aguardando a confirmação
+          <a href="" class="close">×</a>
+        </div>
+      <% end %>
+    </p>
+  </li>
+<% end %>
+
+</ul>

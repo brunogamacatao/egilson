@@ -1,0 +1,17 @@
+.row
+  %div{:class => "large-12 columns"}
+    %div{:class => "nav-bar right"}
+      %ul{:class => "button-group"}
+        %li= link_to "Início", "/"
+        %li= link_to "Blog", "http://eglsonteacher.wix.com/professoregilson", :target => "_blank"
+        - if user_signed_in?
+          %li="Oi #{facebook ? facebook.name : current_user.username}"
+          %li= link_to "Meus Cursos", cursos_path
+          %li= link_to "Sair", destroy_user_session_path, method: :delete
+        - else 
+          %li= link_to "Sobre", sobre_path
+          %li= link_to "Entrar", new_user_session_path
+          %li= link_to "Registrar", new_user_registration_path
+          %li= link_to "Entre pelo Facebook", user_omniauth_authorize_path(:facebook), :class => "button small"
+    %h1 Egilson Gama
+    %hr

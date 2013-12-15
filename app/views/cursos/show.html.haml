@@ -1,0 +1,42 @@
+/ Principal
+%div{:class=>"large-9 columns", :role=>"content"}
+  .row
+    %div{:class=>"large-2 columns"}
+      .panel
+        = image_tag @curso.imagem_url(:mini_thumb) if @curso.imagem?
+    %div{:class=>"large-10 columns"}
+      %h2= @curso.nome
+  - unless @curso.aviso.blank?
+    %hr
+    %div{:class => "alert-box alert", :"data-alert" => true}
+      = @curso.aviso
+      %a{:href => '#', :class => "close"} &times;
+  %p= @curso.descricao
+  %hr
+  %a{:name=>"aulas"}
+  %h4.faixa Aulas:
+  - if @curso.aulas.empty?
+    %p Ainda não há aulas cadastradas
+  - else
+    = render partial: "materiais", locals: {materiais: @curso.aulas, prefix: "aula"}
+  %hr
+  %a{:name=>"hangouts"}
+  %h4.faixa Hangouts:
+  - if @curso.hangouts.empty?
+    %p Ainda não há hangouts cadastrados
+  - else
+    = render partial: "materiais", locals: {materiais: @curso.hangouts, prefix: "hang", tipo_video: "youtube"}
+  %hr
+  %a{:name=>"material_apoio"}
+  %h4.faixa Material de Apoio:
+  - if @curso.materiais.empty?
+    %p Ainda não há materiais de apoio cadastrados
+  - else
+    = render partial: "materiais", locals: {materiais: @curso.materiais, prefix: "mat"}
+  %hr
+  %a{:name=>"forum"}
+  %h4.faixa
+    Fórum:
+  = render :partial => "partials/disqus", :locals => { title: @curso.nome }
+/ Painel lateral
+= render :partial => "sidebar"

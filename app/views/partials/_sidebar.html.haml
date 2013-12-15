@@ -1,0 +1,5 @@
+%aside{:class => "large-3 columns panel"}
+  %h5="Cursos"
+  %ul{:class => "side-nav"}
+    - Curso.all.each do |curso|
+      %li= link_to curso.nome, detalhe_curso_path(curso)

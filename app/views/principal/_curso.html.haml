@@ -1,0 +1,32 @@
+%li{:class=>"panel radius curso_item"}
+  %h3= link_to curso.nome, detalhe_curso_path(curso)
+  %p{:class=>"text-center"}
+    = link_to(detalhe_curso_path(curso)) do
+      = image_tag curso.imagem_url(:main_page_thumb) if curso.imagem? 
+  %p{:class=>"text-center"}
+    - if user_signed_in?
+      - if curso.matriculado?(current_user) 
+        = link_to(url_for(curso), :class => "button round small success") do
+          %i{:class => "foundicon-address-book"} &nbsp;Entrar
+      - else
+        - if curso.inicio_previsto
+          = form_for(Matricula.new) do |f|
+            = f.hidden_field :curso_id, :value => curso.id
+            = button_tag(type: 'submit', class: "button round small") do
+              %i{:class => "foundicon-cart"} &nbsp;Matricule-se
+            = link_to(detalhe_curso_path(curso), class: "button round small") do 
+              %i{:class => "foundicon-plus"} &nbsp;Ver Mais
+        - else 
+          = link_to(curso_interesses_path(curso), class: "button round small success", method: :post) do
+            %i{:class => "foundicon-smiley"} &nbsp;Estou Interessado
+          = link_to(detalhe_curso_path(curso), class: "button round small") do
+            %i{:class => "foundicon-plus"} &nbsp;Ver Mais
+    - else
+      - if curso.inicio_previsto
+        = link_to(new_user_session_path, :class => "button round small") do
+          %i{:class => "foundicon-page"} &nbsp;Registre-se
+      - else
+        = link_to(curso_interesses_path(curso), class: "button round small success", method: :post) do
+          %i{:class => "foundicon-smiley"} &nbsp;Estou Interessado
+      = link_to(detalhe_curso_path(curso), class: "button round small") do
+        %i{:class => "foundicon-plus"} &nbsp;Ver Mais

@@ -1,0 +1,7 @@
+pt-BR:
+  matricula_mailer:
+    confirmacao:
+      subject: "Matrícula Confirmada"
+  date:
+    formats:
+      default: "%d/%m/%Y"

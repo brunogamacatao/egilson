@@ -1,0 +1,47 @@
+%link{:type => "text/css", :rel => "stylesheet", :href => "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"}
+:css
+  li.wysihtml5 {
+    list-style-type: none;
+  }
+  li.wysihtml5 .label {
+    display: none;
+  }
+  .ui-front {
+    z-index:1000000 !important; /* The default is 100. !important overrides the default. */
+  }
+
+%h1= "#{image_tag @curso.imagem_url(:mini_thumb) if @curso.imagem?} #{@curso.nome}".html_safe
+%h3= @curso.descricao
+%hr
+%br
+%h2 Alunos Matriculados
+%table
+  %thead
+    %tr
+      %th Usuário
+      %th E-mail
+      %th Estado
+    - @curso.matriculas.each do |matricula|
+      - if matricula.user
+        %tr
+          %td= matricula.user.username
+          %td= matricula.user.email
+          %td= matricula.estado.to_s.capitalize
+
+#mensagem_dialog{title: "Enviar Mensagem"}
+  = semantic_form_for([:admin, @curso], url: curso_enviar_mensagem_path(@curso), :html => {:method => :post}) do |f|
+    = f.input :mensagem, as: :wysihtml5
+    = f.submit "Enviar"
+
+:javascript
+  $(function() {
+    $("#mensagem_dialog").dialog({
+      width: 730,
+      height: 350,
+      modal: true,
+      autoOpen: false
+    });
+    $("#link_enviar_msg").click(function(){
+      $("#mensagem_dialog").dialog('open');
+    });
+  });

@@ -1,0 +1,93 @@
+
+---
+cursos:
+  columns:
+  - id
+  - nome
+  - imagem
+  - descricao
+  - inicio_previsto
+  - proxima_turma
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - Java Avançado
+    - 24242832869_O.jpg
+    - Descrição do curso de Java Avançado
+    - true
+    - '2013-09-21'
+    - '2013-09-15 23:58:03.489728'
+    - '2013-09-16 00:25:21.018045'
+  - - '2'
+    - Adobe Flex para Android e IOS
+    - aumento-de-produtividade-tecnologia-mobile.jpg
+    - Desenvolvimento de aplicações móveis para as plataformas Android e IOS utilizando
+      a ferramenta Adobe Flex.
+    - true
+    - '2013-09-21'
+    - '2013-09-15 23:58:52.50926'
+    - '2013-09-16 00:26:35.868808'
+  - - '3'
+    - Ruby on Rails
+    - 6a00d83451c41c69e200e54f13a66b8833-800wi.png
+    - Desenvolvimento de aplicações com Ruby on Rails
+    - false
+    - !!null 
+    - '2013-09-15 23:59:18.823325'
+    - '2013-09-16 00:27:23.179074'
+  - - '4'
+    - Unity3D
+    - unity3d1.jpg
+    - Desenvolvimento de jogos com a engine Unity3D
+    - false
+    - !!null 
+    - '2013-09-15 23:59:38.269261'
+    - '2013-09-16 00:27:56.567769'
+  - - '5'
+    - Construct2
+    - header.jpg
+    - Desenvolvimento de jogos com a engine Construct2
+    - false
+    - !!null 
+    - '2013-09-15 23:59:55.790959'
+    - '2013-09-16 00:28:34.548028'
+  - - '6'
+    - JavaScript
+    - 768px-JavaScript-logo.png
+    - JavaScript the Good Parts
+    - false
+    - !!null 
+    - '2013-09-16 00:00:33.906505'
+    - '2013-09-16 00:29:13.04527'
+
+---
+admin_users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - admin@example.com
+    - $2a$10$0gQhLxwTpPKkl7mXYO59d./a5tBFPff3/wTQdP7mFQN845NHUwPpq
+    - !!null 
+    - !!null 
+    - !!null 
+    - '2'
+    - '2013-09-16 00:20:23.479763'
+    - '2013-09-15 23:53:41.769997'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2013-09-15 23:51:56.266779'
+    - '2013-09-16 00:20:23.490407'

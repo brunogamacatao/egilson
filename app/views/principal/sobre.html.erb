@@ -1,0 +1,40 @@
+<div class="large-9 columns" role="content">
+  <article>
+    <ul data-orbit data-options="timer_speed:2500">
+      <li>
+        <%= image_tag "distancia.jpg" %>
+        <div class="orbit-caption">Cursos de extensão a distância</div>
+      </li>
+      <li>
+        <%= image_tag "meu.jpg" %>
+        <div class="orbit-caption">Todo o material do curso é SEU !</div>
+      </li>
+      <li>
+        <%= image_tag "hangouts.jpg" %>
+        <div class="orbit-caption">Acompanhamento ao vivo via Hangouts</div>
+      </li>
+      <li>
+        <%= image_tag "correios.jpg" %>
+        <div class="orbit-caption">Certificado enviado a sua residência após o curso</div>
+      </li>
+      <li>
+        <%= image_tag "duvidas.jpg" %>
+        <div class="orbit-caption">Tira-dúvidas através de fóruns online</div>
+      </li>
+      <li>
+        <%= image_tag "pagseguro.jpg" %>
+        <div class="orbit-caption">Pagamento através do PagSeguro</div>
+      </li>
+    </ul>    
+  </article>
+</div>
+<!-- Sidebar -->
+<aside class="large-3 columns panel">
+  <h5>Cursos</h5>
+  <ul class="side-nav">
+    <% Curso.all.each do |curso| %>
+      <li><%= link_to curso.nome, detalhe_curso_path(curso) %></li>
+    <% end %>
+  </ul>
+</aside>
+<!-- End Sidebar -->

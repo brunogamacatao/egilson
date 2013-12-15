@@ -1,0 +1,13 @@
+- material = detalhe_material
+%div{:id=>"modal_#{prefix}_#{material.id}", :class=>"reveal-modal"}
+  %h2= material.video.blank? ? "Detalhes" : "Assistir"
+  - unless material.video.blank?
+    - if tipo_video == 'vimeo'
+      %div{:class=>"flex-video vimeo"}
+        =vimeo(material.video)
+    - else
+      %div{:class=>"flex-video"}
+        =youtube(material.video)
+  - unless material.descricao.blank?
+    %p=material.descricao.html_safe
+  %a{:class=>"close-reveal-modal"} &#215;

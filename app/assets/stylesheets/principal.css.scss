@@ -1,0 +1,25 @@
+.nav-bar {
+  .button-group {
+    li {
+      margin-top: 3em;
+      margin-right: 2em;
+    }
+  }
+}
+
+.curso_item {
+  height: 50px;
+  overflow: hidden;
+  h3 {
+    height: 2em;
+  }
+  img {
+    height: 150px;
+    margin-bottom: 1em;
+  }
+}
+
+.faixa {
+  background-color: #CCC;
+  padding: 0.2em;
+}
