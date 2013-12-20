@@ -1,3 +1,8 @@
+#topo {
+  background-image: url(image_path('logo.jpg'));
+  height: 288px;
+}
+
 .nav-bar {
   .button-group {
     li {
@@ -20,6 +25,8 @@
 }
 
 .faixa {
-  background-color: #CCC;
+  background-color: #6D7FCC;
+  border: 1px solid;
+  border-color: darken(#6D7FCC, 10%);
   padding: 0.2em;
 }
