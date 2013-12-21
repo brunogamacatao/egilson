@@ -16,7 +16,6 @@
     %title= content_for?(:title) ? yield(:title) : "Curso de Inglês, prof. Egilson"
     
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/custom.modernizr" 
     = csrf_meta_tags
   %body
     = render :partial => "partials/navbar"
