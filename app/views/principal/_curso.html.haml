@@ -1,8 +1,12 @@
-%li{:class=>"panel radius curso_item"}
-  %h3= link_to curso.nome, detalhe_curso_path(curso)
-  %p{:class=>"text-center"}
-    = link_to(detalhe_curso_path(curso)) do
-      = image_tag curso.imagem_url(:main_page_thumb) if curso.imagem? 
+%li{:class=>"curso_item"}
+  - if curso_counter > 0
+    %hr{:class=>"style-seven"}
+  %h2{:class=>"subheader"}= link_to curso.nome, detalhe_curso_path(curso)
+  .row
+    %div{:class => "large-3 columns"}
+      = link_to(detalhe_curso_path(curso)) do
+        = image_tag curso.imagem_url(:main_page_thumb) if curso.imagem? 
+    %div{:class => "large-9 columns"}= curso.descricao
   %p{:class=>"text-center"}
     - if user_signed_in?
       - if curso.matriculado?(current_user) 

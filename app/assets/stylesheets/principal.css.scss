@@ -1,3 +1,8 @@
+body {
+  background-image: url(image_path('background.jpg'));
+  background-repeat: repeat;
+}
+
 #topo {
   background-image: url(image_path('logo.jpg'));
   height: 288px;
@@ -29,4 +34,42 @@
   border: 1px solid;
   border-color: darken(#6D7FCC, 10%);
   padding: 0.2em;
+}
+
+footer {
+  .row {
+    padding: 10px;
+    background-color: #080F1A;
+    p {
+      text-align: right;
+      font-size: 0.8em;
+      color: white;
+    }
+  }
+}
+
+.curso_item {
+  img, .button {
+    -webkit-box-shadow: 3px 3px 3px #7C7C7C;
+    box-shadow: 3px 3px 3px #7C7C7C;    
+  }
+}
+
+hr.style-seven {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;    
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }

@@ -1,11 +1,3 @@
-%div{:class => "large-9 columns", :role => "content"}
-  %h4{:class =>"text-center faixa"} Turmas Abertas
-  %ul{:class=>"small-block-grid-2 large-block-grid-2"}
-    - Curso.abertos.each do |curso| 
-      = render :partial => "curso", :locals => {:curso => curso}
-  %hr
-  %h4{:class =>"text-center faixa"} Próximas Turmas
-  %ul{:class=>"small-block-grid-2 large-block-grid-2"}
-    - Curso.proximos.each do |curso| 
-      = render :partial => "curso", :locals => {:curso => curso}
-= render :partial => "partials/sidebar"
+%div{:class => "large-12 columns", :role => "content"}
+  %ul{:class=>"small-block-grid-1 large-block-grid-1"}
+    = render :partial => "curso", collection: Curso.abertos

@@ -53,7 +53,7 @@ $body-font-style: normal;
 $primary-color: #BA040F;
 $secondary-color: #e7e7e7;
 $alert-color: #f04124;
-$success-color: #43AC6A;
+$success-color: #1F49B3;
 
 // We use these to make sure border radius matches unless we want it different.
 //$global-radius: 3px;
@@ -995,4 +995,33 @@ $topbar-dropdown-link-bg: $topbar-bg-color;
 .row { 
   max-width: 960px;
   background-color: #fff;
+}
+
+@font-face {
+  font-family: 'generalFoundicons';
+  src: url('fonts/general_foundicons.eot');
+  src: url('fonts/general_foundicons.eot?#iefix') format('embedded-opentype'),
+       url('fonts/general_foundicons.woff') format('woff'),
+       url('fonts/general_foundicons.ttf') format('truetype'),
+       url('fonts/general_foundicons.svg#generalFoundicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+ 
+[class*="foundicon-"]:before {
+  font-family: "generalFoundicons";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
 }
